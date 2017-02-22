@@ -1,5 +1,10 @@
 var ticTacToe = {
-  player: ""
+  player: "",
+  matrix: [
+    [-1, -1, -1],
+    [-1, -1, -1],
+    [-1, -1, -1]
+  ]
 };
 
 ticTacToe.player = "x";
@@ -8,31 +13,34 @@ $(".box").click( function(e) {
   e.preventDefault();
 
   var checkTile = $(e.target).css("background-image");
+  var gotMatrixString = $(e.target).data('matrix');
 
-  console.log(e.target.id);
+  var matrixData = gotMatrixString.split(",");
+
+  console.log(gotMatrixString);
   console.log($(e.target).css("background-image"));
 
   if ($(e.target).css("background-image") === "none") {
     
-    if (ticTacToe.player === "x") {
-      ticTacToe.player = "o";
+    if (ticTacToe.player === "X") {
       $(e.target).css({"background-image": "url(images/X-Box.png)", 
-                  "background-position": "center", 
+                  "background-position": "center",
+                  "background-repeat": "no-repeat", 
                   "background-size": "155px 155px"}); 
-      console.log("this is player X");
+      ticTacToe.matrix[parseInt(matrixData[0])][parseInt(matrixData[1])] = 1;
+      ticTacToe.player = "O";
     } 
     else {
-      ticTacToe.player = "x";
       $(e.target).css({"background-image": "url(images/O-Box.jpg)", 
-                  "background-position": "center", 
+                  "background-position": "center",
+                  "background-repeat": "no-repeat", 
                   "background-size": "95px 95px"}); 
-      console.log("this is player O");
+      ticTacToe.matrix[parseInt(matrixData[0])][parseInt(matrixData[1])] = 0;
+      ticTacToe.player = "X";
     }
   
-  } else {
-    console.log("a " + $(e.target) + " is placed here");
   }
-
 
 });
 
+//function
