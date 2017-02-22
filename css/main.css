@@ -1,0 +1,11 @@
+body {
+  box-sizing: border-box;
+  padding: 50px;
+  font-size: 0;
+}
+
+.grid {
+  margin: auto;
+  width: 350px;
+  height: 350px;
+}
