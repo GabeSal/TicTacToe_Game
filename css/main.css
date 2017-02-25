@@ -9,3 +9,43 @@ body {
   width: 350px;
   height: 350px;
 }
+
+.js-player1 {
+  position: relative;
+  font-size: 24px;
+  bottom: 15px;
+}
+
+.js-player1-score {
+  position: absolute;
+  margin-left: 33px;
+  font-size: 30px;
+  top: 80px;
+}
+
+.js-player2 {
+  position: relative;
+  font-size: 24px;
+  bottom: 58px;
+  margin-left: 230px;
+}
+
+.js-player2-score {
+  position: absolute;
+  font-size: 30px;
+  right: 400px;
+  top: 80px;
+}
+
+.js-reset-btn {
+  background-color: black;
+  border: solid 2px white;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  color: white;
+  position: absolute;
+  bottom: 185px;
+  right: 490px;
+  font-size: 20px;
+  cursor: pointer;
+}
